@@ -9,8 +9,9 @@ import {
   Star,
 } from "phosphor-react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function Projects() {
   return (
@@ -32,9 +33,10 @@ export default function Projects() {
         alignItems="start"
         w="100%"
         spacing="10"
+        
       >
-        <VStack alignItems="start">
-          <HStack mb="5" color="#3A86FF">
+        <VStack mt='5' alignItems="start">
+          <HStack mb="2" color="#3A86FF">
             <Star size={32} weight="fill" />
             <Heading size="lg">Top Projetos</Heading>
           </HStack>
@@ -116,13 +118,13 @@ export default function Projects() {
                 })}
           </HStack>
         </VStack>
-        <VStack alignItems="start">
-          <HStack mb="5" color="#FF006E">
+        <VStack mt='-5' alignItems="start">
+          <HStack mb="2" color="#FF006E">
             <ListBullets size={18} weight="fill" />
             <Heading size="sm">Outros Projetos</Heading>
           </HStack>
-          <HStack w='8xl'>
-            <Swiper observer slidesPerView={3} spaceBetween={0} direction='horizontal'>
+          <HStack w='calc(95vw)' alignItems='center' >
+            <Swiper style={{ paddingBottom: '2rem' }} centeredSlides observer slidesPerView={3} modules={[ Pagination ]} pagination={{ clickable: true }} spaceBetween={-115} direction='horizontal'>
               {projectlist &&
                 projectlist
                   .filter((item) => !item.topProject)
