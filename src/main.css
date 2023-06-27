@@ -1,0 +1,22 @@
+* {
+  scrollbar-width: none;
+  scrollbar-color: transparent var(--primary);
+}
+
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #FF006E;
+  border-radius: 0;
+  border: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
