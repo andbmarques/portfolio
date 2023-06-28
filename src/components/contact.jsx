@@ -24,14 +24,14 @@ export default function Contact() {
           </Heading>
           <VStack alignItems='start'>
             <HStack>
-              <WhatsappLogo color="#3A86FF" size="35px" />
-              <Text color="#FF006E" fontWeight="bold" fontSize="lg">
+              <WhatsappLogo color="#3379e9" size="35px" />
+              <Text color="#3A86FF" fontWeight="bold" fontSize="lg">
                 +55 (22) 998797263
               </Text>
             </HStack>
             <HStack>
-              <Envelope color="#3A86FF" size="35px" />
-              <Text color="#FF006E" fontWeight="bold" fontSize="lg">
+              <Envelope color="#3379e9" size="35px" />
+              <Text color="#3A86FF" fontWeight="bold" fontSize="lg">
                 andbmarques@gmail.com
               </Text>
             </HStack>

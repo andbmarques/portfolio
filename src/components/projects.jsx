@@ -33,9 +33,8 @@ export default function Projects() {
         alignItems="start"
         w="100%"
         spacing="10"
-        
       >
-        <VStack mt='5' alignItems="start">
+        <VStack mt="5" alignItems="start">
           <HStack mb="2" color="#3A86FF">
             <Star size={32} weight="fill" />
             <Heading size="lg">Top Projetos</Heading>
@@ -118,13 +117,31 @@ export default function Projects() {
                 })}
           </HStack>
         </VStack>
-        <VStack mt='-5' alignItems="start">
+        <VStack mt="-5" alignItems="start">
           <HStack mb="2" color="#FF006E">
             <ListBullets size={18} weight="fill" />
             <Heading size="sm">Outros Projetos</Heading>
           </HStack>
-          <HStack w='calc(95vw)' alignItems='center' >
-            <Swiper style={{ paddingBottom: '2rem' }} centeredSlides observer slidesPerView={3} modules={[ Pagination ]} pagination={{ clickable: true }} spaceBetween={-115} direction='horizontal'>
+          <HStack w="calc(95vw)" alignItems="center">
+            <Swiper
+              style={{
+                paddingBottom: "2rem",
+                "--swiper-pagination-color": "#FFBA08",
+                "--swiper-pagination-bullet-inactive-color": "#FF006E",
+                "--swiper-pagination-bullet-inactive-opacity": "1",
+                "--swiper-pagination-bullet-size": "8px",
+                "--swiper-pagination-bullet-horizontal-gap": "6px",
+                "--swiper-pagination-bullet-:": "6px;",
+                height: "300px",
+              }}
+              updateOnWindowResize={false}
+              observer
+              slidesPerView={"2"}
+              modules={[Pagination]}
+              pagination={{ clickable: true }}
+              spaceBetween={0}
+              direction="horizontal"
+            >
               {projectlist &&
                 projectlist
                   .filter((item) => !item.topProject)
@@ -134,14 +151,14 @@ export default function Projects() {
                         <VStack
                           alignItems="center"
                           justifyContent="space-between"
-                          w="md"
+                          w="calc(46vw)"
                           h="2xs"
                           borderRadius="2xl"
                           p="5"
-                          border="2px solid #ff006f63"
+                          border="2px solid #3a85ff75"
                         >
                           <HStack w="100%" justifyContent="space-between">
-                            <Heading color="#FF006E" size="md">
+                            <Heading color="#3A86FF" size="md">
                               {item.title}
                             </Heading>
                             {item.isFinished ? (
@@ -174,7 +191,9 @@ export default function Projects() {
                                 );
                               })}
                           </HStack>
-                          <Text flexWrap="wrap">{item.desc}</Text>
+                          <Text w="100%" flexWrap="wrap">
+                            {item.desc}
+                          </Text>
                           <HStack alignSelf="end">
                             <Button
                               color="white"
